@@ -2,7 +2,7 @@
 #include "sona_rs485.h"
 
 unsigned char data[13];
-sona_rs485 sona1(2,9600,4,0x01);
+sona_rs485 sona1(2,9600,5,0x01);
 void setup() {
   Serial.begin(9600);
   sona1.init();

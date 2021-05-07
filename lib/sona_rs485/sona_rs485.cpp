@@ -28,7 +28,7 @@ void sona_rs485::send_command(int command){
     }
 }
 
-bool sona_rs485::get_data(unsigned int* sona_data_buffer){
+bool sona_rs485::get_data(unsigned char* sona_data_buffer){
     digitalWrite(cs_pin,LOW);
     int sona_data_flag = 0;
     while(Serial2.available()){

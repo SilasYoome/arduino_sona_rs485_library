@@ -6,7 +6,7 @@ class sona_rs485{
         sona_rs485(int _uart_num,int _baud ,int _cs_pin,int address);
         void init();
         void send_command(int command);
-        bool get_data(unsigned int* sona_data_buffer);
+        bool get_data(unsigned char* sona_data_buffer);
     private:
         int uart_num;
         int baud;

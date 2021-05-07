@@ -56,7 +56,12 @@ bool sona_rs485::get_data(unsigned char* sona_data_buffer){
             for(int i = 0;i<13;i++){
                 sona_data_buffer[i] = sona_data[i];
             }
-        }
+            for(int i = 0;i<13;i++){
+                Serial.print(sona_data[i]);
+                Serial.print(" ");
+            }       
+            Serial.println();
+            }
         sona_data_flag++;
     }
     return false;

@@ -15,19 +15,16 @@ void loop() {
 
   if(millis()-last_millis >= 400 && still_command == false){
     last_millis = millis();
+    Serial.println("1");
     sona1.send_command(0x01);
     command_time = millis();
     still_command = true;
   }
 
   if(millis()-command_time >= 200 && still_command == true){
+    Serial.println("2");
     sona1.get_data(data);
-    for(int i = 0;i<13;i++){
-      Serial.print(data[i]);
-      Serial.print(" ");
-    }
-    Serial.println();
-    still_command = false;
+    still_command=false;
   }
 
 }
